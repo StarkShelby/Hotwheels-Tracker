@@ -66,40 +66,40 @@ body {
 
 /* Default navbar styles */
 .navbar {
-  overflow: hidden;
-  background-color: #333;
-  padding: 10px 0;
+  display: flex;
+  justify-content: space-between; /* Pushes left and right sections apart */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #25357e;
 }
 
-.navbar a {
-  float: right;
+.navbar .logo img {
+  height: 50px; /* Adjust logo size */
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.navbar .nav-links a {
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
+  padding: 10px 15px;
   font-size: 17px;
 }
 
-/* Special styles for My Collection navbar */
-.mycollection-navbar {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px auto;
-  max-width: 80%;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+.navbar .nav-links a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-.mycollection-navbar a {
-  font-weight: bold;
-  border-radius: 10px;
+.hotwheels-logo img {
+  width: 150%; /* Make image 1.5x bigger */
+  height: fit-content; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out; /* Smooth effect */
 }
 
-.mycollection-navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #ffcc00 !important;
+.hotwheels-logo img:hover {
+  transform: scale(1.2); /* Increase size on hover */
 }
