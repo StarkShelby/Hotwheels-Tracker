@@ -23,7 +23,7 @@ img {
 }
 
 .car-card {
-  background: white;
+  background: rgb(139, 124, 192);
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -51,7 +51,55 @@ img {
 }
 
 #my-collection-container div:hover {
-  background: bisque;
+  background: rgb(114, 92, 224);
 }
 
-/* Apply hover effect only on favorites.html */
+/* Apply effect only on mycollection.html */
+body {
+  background: linear-gradient(
+    to right,
+    #1e293b,
+    #4953df
+  ); /* Dark blue gradient */
+  color: white; /* White text for better visibility */
+}
+
+/* Default navbar styles */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Special styles for My Collection navbar */
+.mycollection-navbar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 80%;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.mycollection-navbar a {
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.mycollection-navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffcc00 !important;
+}

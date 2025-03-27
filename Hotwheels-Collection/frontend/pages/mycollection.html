@@ -9,17 +9,28 @@
     <script defer src="../scripts/addToCollection.js"></script>
   </head>
 
-  <body>
-    <nav class="bg-blue-600 p-4 text-white">
-      <h1 class="text-xl font-bold">Hot Wheels Collection</h1>
-      <ul class="flex space-x-4">
-        <li><a href="allcars.html">All Cars</a></li>
-        <li><a href="mycollection.html">My Collection</a></li>
-      </ul>
-    </nav>
+  <!-- navbar.html -->
+
+  <!-- <body class="mycollection-page">
+    <div id="navbar-container"></div> -->
+  <!-- Navbar loads here -->
+
+  <body class="mycollection-page">
+    <div class="navbar">
+      <a href="about.html">About Hot Wheels</a>
+      <a href="allcars.html">All Cars</a>
+      <a href="mycollection.html" class="active">My Collection</a>
+    </div>
+
+    <!-- Rest of your page content -->
 
     <div class="container mx-auto p-6">
-      <h2 class="text-2xl font-semibold mb-4">My Collection</h2>
+      <h1
+        class="text-4xl font-extrabold text-center text-white my-6 drop-shadow-lg"
+      >
+        🚗 My Collection 🚗
+      </h1>
+
       <div
         id="my-collection-container"
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"

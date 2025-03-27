@@ -14,24 +14,27 @@
 
   <body class="bg-gray-100 text-gray-900">
     <!-- Navbar -->
-    <nav class="bg-blue-600 p-4 text-white">
-      <div class="container mx-auto flex justify-between">
-        <h1 class="text-xl font-bold">Hot Wheels Collection</h1>
-        <ul class="flex space-x-4">
-          <li><a href="../index.html" class="hover:underline">Home</a></li>
-          <li>
-            <a href="mycollection.html" class="hover:underline"
-              >My Collection</a
-            >
-          </li>
-          <li><a href="allcars.html" class="hover:underline">All Cars</a></li>
-        </ul>
-      </div>
-    </nav>
+
+    <body>
+      <div id="navbar-container"></div>
+      <!-- Navbar loads here -->
+
+      <script>
+        fetch("navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
+      </script>
+
+      <!-- Rest of your page content -->
+    </body>
 
     <!-- Car List -->
     <div class="container allcars-container mx-auto my-8 p-4">
-      <h3 class="text-2xl font-semibold mb-4">All Hot Wheels Cars</h3>
+      <h3 class="text-2xl font-semibold mb-4 padding-top (pt-24)">
+        All Hot Wheels Cars
+      </h3>
       <div
         id="cars-container"
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
