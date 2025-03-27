@@ -8,6 +8,10 @@ img {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .remove-btn {
   background-color: #dc2626; /* Red color */
   color: white;
