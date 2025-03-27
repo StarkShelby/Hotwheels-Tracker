@@ -1,15 +1,19 @@
-function addToCollection(carId) {
-  let myCollection = JSON.parse(localStorage.getItem("myCollection")) || [];
+function addToCollection(carName, carImage, carYear, carSeries) {
+  alert(`${carName} added to your collection!`);
 
-  // Find the selected car
-  let selectedCar = cars.find((car) => car.id === carId);
+  let collection = JSON.parse(localStorage.getItem("myCollection")) || [];
 
-  // Check if it's already added
-  if (!myCollection.some((car) => car.id === carId)) {
-    myCollection.push(selectedCar);
-    localStorage.setItem("myCollection", JSON.stringify(myCollection));
-    alert(`${selectedCar.name} added to My Collection!`);
+  if (!collection.some((car) => car.name === carName)) {
+    // Prevent duplicates
+    collection.push({
+      name: carName,
+      image: carImage,
+      year: carYear,
+      series: carSeries,
+    });
+    localStorage.setItem("myCollection", JSON.stringify(collection));
+    console.log("Car added:", collection); // Debugging log
   } else {
-    alert("This car is already in your collection!");
+    console.log("Car already exists in collection.");
   }
 }

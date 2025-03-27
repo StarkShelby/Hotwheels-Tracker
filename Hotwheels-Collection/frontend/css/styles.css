@@ -7,3 +7,51 @@ img {
   height: 200px;
   width: 100%;
 }
+
+.remove-btn {
+  background-color: #dc2626; /* Red color */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #b91c1c; /* Darker red on hover */
+}
+
+.car-card {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.car-card:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add deeper shadow */
+}
+
+.car-image {
+  width: 100%;
+  height: auto; /* This will maintain the aspect ratio */
+  object-fit: contain; /* Ensure the image is fully visible */
+  border-radius: 8px;
+}
+
+#my-collection-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+  gap: 20px; /* Adds spacing between grid items */
+  justify-content: center; /* Centers content */
+}
+
+#my-collection-container div:hover {
+  background: bisque;
+}
+
+/* Apply hover effect only on favorites.html */

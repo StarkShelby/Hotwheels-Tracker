@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Collection</title>
+    <title class="bg-blue-600 p-3 justify-between">My Collection</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <script defer src="../js/mycollection.js"></script>
-    <script src="../js/mycollection.js"></script>
+    <script defer src="../scripts/addToCollection.js"></script>
   </head>
+
   <body>
     <nav class="bg-blue-600 p-4 text-white">
       <h1 class="text-xl font-bold">Hot Wheels Collection</h1>
@@ -19,8 +20,11 @@
 
     <div class="container mx-auto p-6">
       <h2 class="text-2xl font-semibold mb-4">My Collection</h2>
-      <div id="collectionContainer" class="grid grid-cols-3 gap-4">
-        <!-- Cars will be dynamically added here -->
+      <div
+        id="my-collection-container"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
+      >
+        <!-- My collection cars will be displayed here -->
       </div>
     </div>
   </body>

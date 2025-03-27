@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Hot Wheels Cars</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="../js/allcars.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
+
   <body class="bg-gray-100 text-gray-900">
     <!-- Navbar -->
     <nav class="bg-blue-600 p-4 text-white">
@@ -25,16 +30,23 @@
     </nav>
 
     <!-- Car List -->
-    <section class="container mx-auto my-8 p-4">
+    <div class="container allcars-container mx-auto my-8 p-4">
       <h3 class="text-2xl font-semibold mb-4">All Hot Wheels Cars</h3>
-      <div id="cars-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Cars will be loaded here by JS -->
+      <div
+        id="cars-container"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
+      >
+        <!-- Cars will be dynamically added here via JavaScript -->
       </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-blue-600 text-white text-center p-4 mt-8">
       &copy; 2025 Hot Wheels Collection | Made by Sharique
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/addtocollection.js"></script>
+    <script src="../js/allcars.js"></script>
   </body>
 </html>

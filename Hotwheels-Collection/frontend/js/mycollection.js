@@ -1,34 +1,48 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const collectionContainer = document.getElementById("my-collection");
+function displayMyCollection() {
+  const collectionContainer = document.getElementById(
+    "my-collection-container"
+  );
+  collectionContainer.innerHTML = ""; // Clear previous content
 
-  try {
-    const response = await fetch("http://localhost:5001/mycollection"); // API for user collection
-    const cars = await response.json();
+  const myCollection = JSON.parse(localStorage.getItem("myCollection")) || [];
 
-    if (!Array.isArray(cars)) {
-      throw new Error("Invalid data format received");
-    }
+  myCollection.forEach((car, index) => {
+    const carCard = document.createElement("div");
+    carCard.classList.add(
+      "car-card",
+      "p-4",
+      "bg-white",
+      "rounded-lg",
+      "shadow-md"
+    );
 
-    collectionContainer.innerHTML = `<h2 class="text-xl font-bold mb-4">My Collection</h2>`;
+    carCard.innerHTML = `
+      <img src="${car.image}" class="car-image" alt="${car.name}">
+      <h3 class="text-lg font-bold mt-2">${car.name} (${car.year})</h3>
+      <p><strong>Series:</strong> ${car.series}</p>
+      <button class="remove-btn bg-red-500 text-white px-4 py-2 rounded mt-2" data-index="${index}">
+        Remove
+      </button>
+    `;
 
-    const carsGrid = document.createElement("div");
-    carsGrid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4";
+    collectionContainer.appendChild(carCard);
+  });
 
-    cars.forEach((car) => {
-      const carCard = document.createElement("div");
-      carCard.className = "bg-white shadow-lg p-4 rounded-lg text-center";
-
-      carCard.innerHTML = `
-        <img src="${car.image}" alt="${car.name}" class="w-full h-32 object-cover">
-        <p class="mt-2 font-semibold">${car.name}</p>
-      `;
-
-      carsGrid.appendChild(carCard);
+  // Attach event listeners to all Remove buttons
+  document.querySelectorAll(".remove-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      removeCarFromCollection(this.dataset.index);
     });
+  });
+}
 
-    collectionContainer.appendChild(carsGrid);
-  } catch (error) {
-    console.error("Error loading collection:", error);
-    collectionContainer.innerHTML = `<p class="text-red-500">Failed to load your collection.</p>`;
-  }
-});
+// Function to remove car from localStorage and update UI
+function removeCarFromCollection(index) {
+  let myCollection = JSON.parse(localStorage.getItem("myCollection")) || [];
+  myCollection.splice(index, 1); // Remove car from array
+  localStorage.setItem("myCollection", JSON.stringify(myCollection)); // Save updated list
+  displayMyCollection(); // Refresh UI
+}
+
+// Call function to display the collection when the page loads
+document.addEventListener("DOMContentLoaded", displayMyCollection);
