@@ -24,6 +24,8 @@ html {
 
 .remove-btn:hover {
   background-color: #b91c1c; /* Darker red on hover */
+  transition: background 0.3s ease;
+  color: black;
 }
 
 .car-card {
@@ -210,4 +212,42 @@ body {
 
 h3 {
   font-size: 2rem;
+}
+
+/* Styling for the main container */
+.mc-container {
+  max-width: 1200px; /* Ensures the container doesn't shrink */
+  margin: 0 auto; /* Centers the container */
+  padding: 1.5rem; /* Adds spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes elements apart */
+}
+
+/* Styling for the car image */
+.mc-container img {
+  width: 50%; /* Takes half of the available width */
+  max-width: 400px; /* Prevents the image from becoming too large */
+}
+
+/* Typing effect container */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap");
+
+.typing-container {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem; /* Increase font size */
+  font-weight: bold;
+  color: #ffd700; /* Gold color for a premium look */
+  text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.8);
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+}
+
+/* Optional: Add animation for smooth appearance */
+#typing-text {
+  display: inline-block;
+  border-right: 2px solid white; /* Cursor effect */
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
 }
