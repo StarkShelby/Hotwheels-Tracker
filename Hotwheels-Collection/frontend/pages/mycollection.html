@@ -6,52 +6,66 @@
     <title class="bg-blue-600 p-3 justify-between">My Collection</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <script defer src="../js/mycollection.js"></script>
-    <script defer src="../scripts/addToCollection.js"></script>
+    <script defer src="../js/addtocollection.js"></script>
   </head>
 
   <!-- navbar.html -->
+  <body
+    class="bg-gray-100 text-gray-900 opacity-0 transition-opacity duration-1000"
+    onload="fadeInPage()"
+  >
+    <body class="mycollection-page">
+      <div class="navbar">
+        <a href="../index.html" class="hotwheels-logo">
+          <img
+            id="hotwheels-logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxF1ZxXX9nzw9IW7wAIBL6-Jm3TvNoci2zA&s"
+            alt="Hot Wheels"
+          />
+          <span class="hotwheels-text">Hot Wheels</span>
+        </a>
+        <div class="nav-links">
+          <a href="allcars.html">All Cars</a>
+          <a href="mycollection.html">My Collection</a>
 
-  <!-- <body class="mycollection-page">
-    <div id="navbar-container"></div> -->
-  <!-- Navbar loads here -->
-
-  <body class="mycollection-page">
-    <div class="navbar">
-      <a href="../index.html" class="hotwheels-logo">
-        <img
-          id="hotwheels-logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxF1ZxXX9nzw9IW7wAIBL6-Jm3TvNoci2zA&s"
-          alt="Hot Wheels"
-        />
-        <span class="hotwheels-text">Hot Wheels</span>
-      </a>
-      <div class="nav-links">
-        <a href="mycollection.html">My Collection</a>
-        <a href="allcars.html">All Cars</a>
-        <a href="about.html">About Hot Wheels</a>
+          <a href="about.html">About Hot Wheels</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Rest of your page content -->
+      <!-- Rest of your page content -->
 
-    <div class="container mx-auto p-6">
-      <h1
-        class="text-4xl font-extrabold text-center text-white my-6 drop-shadow-lg"
-      >
-        🚗 My Collection 🚗
-      </h1>
+      <div class="container mx-auto p-6">
+        <div>
+          <img
+            src="../assets/mycollection.png"
+            alt="My Collection"
+            class="h-20 -ml-8 drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
+          />
+          <h3
+            class="text-3xl font-semibold text-yellow-400 animate-pulse drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
+          >
+            All HotWheels Cars
+          </h3>
+        </div>
 
-      <div
-        id="my-collection-container"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
-      >
-        <!-- My collection cars will be displayed here -->
+        <div
+          id="my-collection-container"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
+        >
+          <!-- My collection cars will be displayed here -->
+        </div>
       </div>
-    </div>
-    <div>
-      <footer class="bg-blue-600 text-white text-center p-4 mt-10">
-        &copy; 2025 Hot Wheels Collection | Made by Sharique
-      </footer>
-    </div>
+      <div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("opacity-100");
+          });
+        </script>
+
+        <footer class="bg-blue-600 text-white text-center p-4 mt-10">
+          &copy; 2025 Hot Wheels Collection | Made by Sharique
+        </footer>
+      </div>
+    </body>
   </body>
 </html>

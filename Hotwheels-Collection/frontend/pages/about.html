@@ -6,7 +6,10 @@
     <title>About | Hot Wheels Collection</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body class="bg-gray-100 text-gray-900">
+  <body
+    class="bg-gray-100 text-gray-900 opacity-0 transition-opacity duration-1000"
+    onload="fadeInPage()"
+  >
     <!-- Include Navbar -->
     <div class="navbar">
       <a href="../index.html" class="logo">
@@ -17,8 +20,9 @@
         />
       </a>
       <div class="nav-links">
-        <a href="mycollection.html">My Collection</a>
         <a href="allcars.html">All Cars</a>
+        <a href="mycollection.html">My Collection</a>
+
         <a href="about.html">About Hot Wheels</a>
       </div>
     </div>
@@ -72,5 +76,10 @@
         </div>
       </div>
     </div>
+    <script>
+      function fadeInPage() {
+        document.body.classList.add("opacity-100");
+      }
+    </script>
   </body>
 </html>

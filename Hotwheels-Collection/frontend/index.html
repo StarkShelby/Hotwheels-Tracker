@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hot Wheels Collection</title>
+    <title>🏎️Hot Wheels Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
@@ -11,25 +11,40 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
-    <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css"
-    rel="stylesheet"a
   </head>
-  <body class="bg-gray-100 text-gray-900">
+  <body
+    class="bg-gray-100 text-gray-900 opacity-0 transition-opacity duration-1000"
+    onload="document.body.classList.add('opacity-100')"
+  >
     <!-- Navbar -->
-    <nav class="bg-blue-600 p-4 text-white">
-      <div class="container mx-auto flex justify-between">
+    <nav class="bg-blue-600 p-4 text-yellow-300">
+      <div class="container mx-auto flex justify-between" id="navbar-sticky">
         <h1 class="text-xl font-bold">Hot Wheels Collection</h1>
         <ul class="flex space-x-4">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
           <li>
-            <a href="pages/mycollection.html" class="hover:underline"
-              >My Collection</a
+            <a
+              href="index.html"
+              class="active-click text-lg font-medium transition-all duration-300 hover:text-white hover:shadow-md hover:shadow-blue-400"
             >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="pages/allcars.html"
+              class="active-click text-lg font-medium transition-all duration-300 hover:text-white hover:shadow-md hover:shadow-blue-400"
+            >
+              All Cars
+            </a>
           </li>
           <li>
-            <a href="pages/allcars.html" class="hover:underline">All Cars</a>
+            <a
+              href="pages/mycollection.html"
+              class="active-click text-lg font-medium transition-all duration-300 hover:text-white hover:shadow-md hover:shadow-blue-400"
+            >
+              My Collection
+            </a>
           </li>
         </ul>
       </div>
@@ -42,19 +57,146 @@
         Track, collect, and showcase your favorite Hot Wheels cars!
       </p>
     </header>
-    <div id="carousel-container"></div>
+
+    <!-- Carousel Section -->
+
+    <div
+      id="hotwheels-carousel"
+      class="relative w-full max-w-full mx-auto h-auto md:h-auto"
+      data-carousel="slide"
+    >
+      <!-- Carousel wrapper -->
+      <div
+        class="relative h-72 md:h-[500px] overflow-hidden rounded-lg shadow-lg"
+      >
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+          src="https://c4.wallpaperflare.com/wallpaper/307/390/538/pink-nissan-drift-car-wallpaper-preview.jpg""
+          class="absolute w-full h-full object-cover" alt="Hot Wheels Car 1" />
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/09/hot-wheels-unleashed-key-art.jpg"
+            class="absolute w-full h-full object-cover"
+            alt="Hot Wheels Car 2"
+          />
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="https://i.ytimg.com/vi/3cML77ZvkIM/maxresdefault.jpg""
+          class="absolute w-full h-full object-cover" alt="Hot Wheels Car 3" />
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="https://img.pikbest.com/ai/illus_our/20230424/0d99263358a9bafb20f22bc0ec113350.jpg!w700wp"
+            class="absolute w-full h-full object-cover"
+            alt="Hot Wheels Car 4"
+          />
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="./assets/00c642d6-5096-4e9c-b0f7-58e691874da4._CR0,0,3000,600_SX3000_.jpg"
+            class="absolute w-full h-full object-cover"
+            alt="Hot Wheels Car 5"
+          />
+        </div>
+      </div>
+
+      <!-- Slider indicators -->
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 space-x-3"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white border border-blue-600"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white border border-blue-600"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white border border-blue-600"
+          aria-current="false"
+          aria-label="Slide 3"
+          data-carousel-slide-to="2"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white border border-blue-600"
+          aria-current="false"
+          aria-label="Slide 4"
+          data-carousel-slide-to="3"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white border border-blue-600"
+          aria-current="false"
+          aria-label="Slide 5"
+          data-carousel-slide-to="4"
+        ></button>
+      </div>
+
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="absolute top-1/2 left-2 transform -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-800 focus:outline-none"
+        data-carousel-prev
+      >
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 1 1 5l4 4"
+          />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-1/2 right-2 transform -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-800 focus:outline-none"
+        data-carousel-next
+      >
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 9 4-4-4-4"
+          />
+        </svg>
+        <span class="sr-only">Next</span>
+      </button>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-blue-600 text-white text-center p-4 mt-8">
       &copy; 2025 Hot Wheels Collection | Made by Sharique
     </footer>
-    <script>
-      fetch("carousal.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("carousel-container").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading carousel:", error));
-    </script>
   </body>
 </html>

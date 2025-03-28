@@ -1,3 +1,7 @@
+function fadeInPage() {
+  document.body.style.opacity = 1;
+}
+
 function addToCollection(carName, carImage, carYear, carSeries) {
   alert(`${carName} added to your collection!`);
 

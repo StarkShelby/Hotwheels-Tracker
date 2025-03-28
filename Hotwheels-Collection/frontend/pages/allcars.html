@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
-  <body class="bg-gray-100 text-gray-900">
+  <body
+    class="bg-gray-100 text-gray-900 opacity-0 transition-opacity duration-1000"
+    onload="document.body.classList.add('opacity-100')"
+  >
     <!-- Navbar -->
 
     <body>
@@ -32,9 +35,19 @@
 
     <!-- Car List -->
     <div class="container allcars-container mx-auto my-8 p-4">
-      <h3 class="text-2xl font-semibold mb-4 padding-top (pt-24)">
-        All Hot Wheels Cars
-      </h3>
+      <div class="flex items-center gap-3 pt-20">
+        <img
+          src="../assets/b4a92348d4d100b859561ef331853536.png"
+          alt="Hot Wheels Logo"
+          class="h-auto -ml-8 drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
+        />
+        <h3
+          class="text-6xl font-semibold text-yellow-400 animate-pulse drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
+        >
+          All HotWheels Cars
+        </h3>
+      </div>
+
       <div
         id="cars-container"
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
