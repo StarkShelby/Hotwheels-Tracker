@@ -28,34 +28,86 @@ html {
 
 .car-card {
   background: rgb(139, 124, 192);
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Increased padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px; /* Increase width */
+  height: auto; /* Keep height flexible */
 }
 
 .car-card:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add deeper shadow */
+  transform: scale(1.15); /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .car-image {
   width: 100%;
   height: auto; /* This will maintain the aspect ratio */
   object-fit: contain; /* Ensure the image is fully visible */
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 #my-collection-container {
+  margin-left: 2%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
-  gap: 20px; /* Adds spacing between grid items */
-  justify-content: center; /* Centers content */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
 }
 
 #my-collection-container div:hover {
+  transform: scale(1.1);
   background: rgb(114, 92, 224);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ff6600;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff9900, 0 0 25px #ff3300;
+  }
+  100% {
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ff6600;
+  }
+}
+
+#mycollection-text-container h3 {
+  margin-left: 2%;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffcc00; /* Bright yellow */
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+
+  animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.mc-container img {
+  width: 35%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.add-to-collection-btn {
+  font-size: 18px; /* Bigger text */
+  padding: 12px 20px; /* Larger button */
 }
 
 /* Apply effect only on mycollection.html */
@@ -69,6 +121,11 @@ body {
 }
 
 /* Default navbar styles */
+.navbar-sticky {
+  width: 100%; /* Full viewport width */
+  left: 0;
+  top: 0;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -149,4 +206,8 @@ body {
 .active-click:active {
   transform: scale(0.9);
   transition: transform 100ms ease-out;
+}
+
+h3 {
+  font-size: 2rem;
 }
