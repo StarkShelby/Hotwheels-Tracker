@@ -35,15 +35,11 @@
       </div>
     </nav>
 
-    <!-- Add padding to avoid content being hidden under navbar -->
     <div class="pt-24">
-      <!-- Parent container with flexbox -->
-      <!-- Parent container with flexbox -->
       <div class="mc-container">
         <!-- Car Image -->
         <img src="../assets/mycollection.png" alt="My Collection" />
 
-        <!-- Typing Effect Text Container -->
         <div class="typing-container">
           <p id="typing-text"></p>
         </div>
@@ -54,6 +50,8 @@
           My Collection🏎️
         </h3>
       </div>
+
+      <!-- Grid layout for collection -->
       <div
         id="my-collection-container"
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
@@ -61,6 +59,54 @@
         <!-- My collection cars will be displayed here -->
       </div>
     </div>
+
+    <!-- Car Sound -->
+    <audio id="car-sound">
+      <source src="../assets/car-sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+
+    <audio id="car-sound" muted>
+      <source src="../assets/car-sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+
+    <audio id="car-sound">
+      <source src="../assets/car-sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carSound = document.getElementById("car-sound");
+        const carImages = document.querySelectorAll(
+          "#my-collection-container img"
+        );
+
+        let isUserInteracted = false;
+
+        // Unblock audio after user clicks anywhere (required by browser)
+        function enableAudio() {
+          isUserInteracted = true;
+          document.body.removeEventListener("click", enableAudio);
+        }
+
+        document.body.addEventListener("click", enableAudio);
+
+        // Play sound on hover only if the user has interacted
+        carImages.forEach((img) => {
+          img.addEventListener("mouseenter", () => {
+            if (isUserInteracted) {
+              carSound.currentTime = 0; // Restart sound
+              carSound
+                .play()
+                .catch((error) => console.log("Audio play error:", error));
+            }
+          });
+        });
+      });
+    </script>
+
     <script>
       const textArray = [
         "Hot Wheels collecting is more than just a hobby.",
@@ -72,15 +118,13 @@
       let textIndex = 0;
       let charIndex = 0;
       let currentText = "";
-      let typingText = document.getElementById("typing-text");
       const typingSpeed = 100;
-      const deletingSpeed = 50;
-      const pauseBetweenTexts = 50;
+      const pauseBetweenTexts = 1000;
 
       function typeText() {
         if (charIndex < textArray[textIndex].length) {
           currentText += textArray[textIndex][charIndex];
-          typingText.innerHTML = currentText;
+          document.getElementById("typing-text").innerHTML = currentText;
           charIndex++;
           setTimeout(typeText, typingSpeed);
         } else {
@@ -95,12 +139,7 @@
       }
 
       typeText(); // Start the typing effect
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.body.classList.add("opacity-100");
-      });
+      // Start the typing effect // Start the typing effect
     </script>
 
     <footer class="bg-blue-600 text-white text-center p-4 mt-10">

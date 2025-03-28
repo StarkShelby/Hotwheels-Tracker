@@ -46,3 +46,19 @@ function removeCarFromCollection(index) {
 
 // Call function to display the collection when the page loads
 document.addEventListener("DOMContentLoaded", displayMyCollection);
+
+document.addEventListener("DOMContentLoaded", function () {
+  let carSound = document.getElementById("car-sound");
+
+  // Play car sound on page load
+  carSound.volume = 0.5;
+  carSound.play().catch((error) => console.log("Auto-play blocked:", error));
+
+  // Play sound when hovering over a car card
+  document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      carSound.currentTime = 0; // Reset sound to start
+      carSound.play();
+    });
+  });
+});
